@@ -15,26 +15,14 @@ class TurkGateManager(object):
     """
     Create and manage groups for use with TurkGate.
     """
-    def __init__(self, user, pwd, host, port, db, aws_key=None, aws_id=None):
-        """
-        :Parameters:
-            user : username for MySQL database
-            pwd : password for MySQL user
-            port : MySQL port, defaults to 3306
-            db : name of MySQL database with the SurveyRequest table
-            aws_key : AWS access key id
-            aws_id : AWS secret access id
-        """
-        # MySQL config
+    def __init__(self, credentials):
         db_url = 'mysql://{user}:{pwd}@{host}:{port}/{db}'.format(
-                     user=user, pwd=pwd, host=host, port=port, db=db)
+                     **credentials['mysql'])
         engine = create_engine(db_url)
         Session = sessionmaker(bind=engine)
         self.session = Session()
         
-        # boto config
-        if aws_key and aws_id:
-            self.mturk = MTurkConnection(aws_key, aws_id)
+        self.mturk = MTurkConnection(**credentials['aws'])
     
     def get_groups(self):
         """ Retrieve unique group names in SurveyRequest """

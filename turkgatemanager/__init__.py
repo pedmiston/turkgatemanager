@@ -10,3 +10,4 @@ __email__ = "pierce.edmiston@gmail.com"
 
 from manager import *
 from turkgatedb import *
+from credentials import *
