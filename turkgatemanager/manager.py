@@ -18,6 +18,9 @@ class TurkGateManager(object):
     Create and manage groups for use with TurkGate.
     """
     def __init__(self, credentials):
+        """
+        :param dict credentials: MySQL and AWS credentials obtained via get_credentials.
+        """
         mysql_creds = credentials['mysql']
         aws_creds = credentials['aws']
         
@@ -29,7 +32,14 @@ class TurkGateManager(object):
         self.mturk = MTurkConnection(**aws_creds)
     
     def get_groups(self):
-        """ Retrieve unique group names in SurveyRequest """
+        """ 
+        .. function:: get_groups(self)
+        
+        Retrieve unique group names in SurveyRequest.
+        
+        :return: unique group names
+        :rtype: list 
+        """
         query_groups = self.session.query(SurveyRequest.groupName).distinct()
         return [group.groupName for group in query_groups]
     
@@ -108,7 +118,7 @@ class TurkGateManager(object):
         
         assignments = []
         for pg in range(1, num_pages+1):
-            assignments.extend(self.mturk.get_assignments(hit_id,page_number=pg)
+            assignments.extend(self.mturk.get_assignments(hit_id,page_number=pg))
         
         return assignments
     

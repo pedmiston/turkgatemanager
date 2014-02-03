@@ -1,5 +1,5 @@
 .. Turk Gate Manager documentation master file, created by
-   sphinx-quickstart on Mon Feb  3 15:23:20 2014.
+   sphinx-quickstart on Mon Feb  3 15:54:35 2014.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
@@ -11,13 +11,13 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+    includeme
+
 .. automodule:: turkgatemanager
     :members:
-
 .. autoclass:: TurkGateManager
     :members:
-
-.. autoclass:: SurveyRequest
+.. autoclass:: SurveyResponse
     :members:
 
 Indices and tables

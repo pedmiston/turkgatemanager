@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Turk Gate Manager documentation build configuration file, created by
-# sphinx-quickstart on Mon Feb  3 15:23:20 2014.
+# sphinx-quickstart on Mon Feb  3 15:54:35 2014.
 #
 # This file is execfile()d with the current directory set to its containing dir.
 #
@@ -16,7 +16,7 @@ import sys, os
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('..'))
+#sys.path.insert(0, os.path.abspath('.'))
 
 # -- General configuration -----------------------------------------------------
 
