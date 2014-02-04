@@ -1,5 +1,7 @@
 TurkGateManager
 ===============
 
-.. autoclass:: turkgatemanager
+.. currentmodule:: turkgatemanager
+
+.. autoclass:: TurkGateManager
     :members:

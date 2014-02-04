@@ -24,5 +24,7 @@ A participant taking a survey is associated with a single row in the MySQL datab
 | time      | datetime     | YES  |     | NULL    |                |
 +-----------+--------------+------+-----+---------+----------------+
 
+.. currentmodule:: turkgatemanager
+
 .. autoclass:: SurveyRequest
     :members:

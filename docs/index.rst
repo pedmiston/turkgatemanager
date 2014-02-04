@@ -23,19 +23,22 @@ Using TurkGateManager
 Download the turkgatemanager package and use in an interactive python session.
 
 Requirements
-^^^^^^^^^^^^
+------------
+
+TurkGateManager requires the following packages:
 
 - `boto <https://github.com/boto/boto>`_
 - `sqlalchemy <http://www.sqlalchemy.org/download.html>`_
 
-Contents:
+Documentation
+=============
 
 .. toctree::
     :maxdepth: 2
 
     turkgate-manager
     survey-request
-    get-config
+    get-credentials
 
 Indices and tables
 ==================
