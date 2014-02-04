@@ -12,18 +12,7 @@ class SurveyRequest(Base):
     """
     Implement target table in a python class for use with sqlalchemy engine
     
-    Assumes TurkGate defaults:
-    
-    > DESCRIBE [db].SurveyRequest;
-    +-----------+--------------+------+-----+---------+----------------+
-    | Field     | Type         | Null | Key | Default | Extra          |
-    +-----------+--------------+------+-----+---------+----------------+
-    | requestID | int(11)      | NO   | PRI | NULL    | auto_increment |
-    | workerID  | varchar(256) | YES  |     | NULL    |                |
-    | URL       | varchar(256) | YES  |     | NULL    |                |
-    | groupName | varchar(256) | YES  |     | NULL    |                |
-    | time      | datetime     | YES  |     | NULL    |                |
-    +-----------+--------------+------+-----+---------+----------------+
+    Assumes TurkGate defaults.
     """
     __tablename__ = 'SurveyRequest'
     
