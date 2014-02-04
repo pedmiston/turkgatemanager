@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TurkGateManager &mdash; Turk Gate Manager 1.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Turk Gate Manager 1.0.1 documentation" href="index.html" />
+    <link rel="next" title="SurveyRequest" href="survey-request.html" />
+    <link rel="prev" title="Turk Gate Manager Documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="survey-request.html" title="SurveyRequest"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Turk Gate Manager Documentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Turk Gate Manager 1.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="turkgatemanager">
+<h1>TurkGateManager<a class="headerlink" href="#turkgatemanager" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="turkgatemanager.TurkGateManager">
+<em class="property">class </em><tt class="descclassname">turkgatemanager.</tt><tt class="descname">TurkGateManager</tt><big>(</big><em>credentials</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and manage groups for use with TurkGate.</p>
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.add_requests">
+<tt class="descname">add_requests</tt><big>(</big><em>requests</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.add_requests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add requests to SurveyRequest</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>requests</strong> &#8211; list of SurveyRequests to add to the database</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.close">
+<tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close MySQL and mTurk connections</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.copy_group">
+<tt class="descname">copy_group</tt><big>(</big><em>existing</em>, <em>new_group</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.copy_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy all requests in existing group to a new group name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>existing</strong> &#8211; group name in database</li>
+<li><strong>new_group</strong> &#8211; new group name to add to database</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_assignments_by_title">
+<tt class="descname">get_assignments_by_title</tt><big>(</big><em>title</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_assignments_by_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches for HIT IDs based on title and then gets all assignments</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>title</strong> &#8211; name of HIT</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of boto.mturk.connection.Assignment objects from HITs</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_assignments_from_hit_id">
+<tt class="descname">get_assignments_from_hit_id</tt><big>(</big><em>hit_id</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_assignments_from_hit_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve assignments based on a hit id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>hit_id</strong> &#8211; string ID of HIT</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of boto.mturk.connection.Assignment objects from HIT</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_groups">
+<tt class="descname">get_groups</tt><big>(</big><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve unique group names in SurveyRequest.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">unique group names</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_hit_ids_by_title">
+<tt class="descname">get_hit_ids_by_title</tt><big>(</big><em>title</em>, <em>num_recent=10</em>, <em>num_pages=4</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_hit_ids_by_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve HIT ids from HIT title</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>title</strong> &#8211; name of HIT</li>
+<li><strong>num_recent</strong> &#8211; number of recent HITs to search, default 10</li>
+<li><strong>num_pages</strong> &#8211; number of pages to search, default 4</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of HIT IDs with matching title</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_recent_hit_titles">
+<tt class="descname">get_recent_hit_titles</tt><big>(</big><em>num_recent=10</em>, <em>num_pages=1</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_recent_hit_titles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve titles of recent HITs</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>num_recent</strong> &#8211; number of recent hits to search, default 10</li>
+<li><strong>num_pages</strong> &#8211; number of pages to search, default 1</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of all HIT titles</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_requests_by_group">
+<tt class="descname">get_requests_by_group</tt><big>(</big><em>group</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_requests_by_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve requests by group name in SurveyRequest</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>group</strong> &#8211; string group name stored in the SurveyRequest database</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">database queries with matching group name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_workers">
+<tt class="descname">get_workers</tt><big>(</big><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_workers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve unique worker IDs in SurveyRequest</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">unique worker IDs</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_workers_by_group">
+<tt class="descname">get_workers_by_group</tt><big>(</big><em>group</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_workers_by_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve worker ids for a given group name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>group</strong> &#8211; string group name stored in SurveyRequest database</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">worker IDs associated with group</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.make_requests_from_assignments">
+<tt class="descname">make_requests_from_assignments</tt><big>(</big><em>assignments</em>, <em>group</em>, <em>url=None</em>, <em>keep_time=True</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.make_requests_from_assignments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes a list of SurveyRequest objects from mTurk Assignments</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>assignments</strong> &#8211; list of boto.mturk.connection.Assignment objects</li>
+<li><strong>group</strong> &#8211; name of group for new requests</li>
+<li><strong>url</strong> &#8211; survey URL for new group, default None</li>
+<li><strong>keep_time</strong> &#8211; should submit time be extracted from Assignment, default True</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of SurveyRequests</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.make_requests_from_csv">
+<tt class="descname">make_requests_from_csv</tt><big>(</big><em>results_file</em>, <em>id_col='WorkerId'</em>, <em>time_col='SubmitTime'</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.make_requests_from_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>TODO: Retrieve requests from HIT results file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.make_requests_from_hit_title">
+<tt class="descname">make_requests_from_hit_title</tt><big>(</big><em>title</em>, <em>group</em>, <em>url=None</em>, <em>keep_time=True</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.make_requests_from_hit_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes new SurveyRequests from HIT title</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>title</strong> &#8211; string name of HIT title</li>
+<li><strong>group</strong> &#8211; string name of group for new requests</li>
+<li><strong>url</strong> &#8211; survey URL, default None</li>
+<li><strong>keep_time</strong> &#8211; should submit time be extracted from Assignment, default True</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of SurveyRequests</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.remove_requests_by_group">
+<tt class="descname">remove_requests_by_group</tt><big>(</big><em>group</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.remove_requests_by_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a group from the database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>group</strong> &#8211; name of group to remove</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.rename_group">
+<tt class="descname">rename_group</tt><big>(</big><em>existing</em>, <em>new_group</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.rename_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renames a group in the databse</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>existing</strong> &#8211; group name in database</li>
+<li><strong>new_group</strong> &#8211; new group name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Turk Gate Manager Documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="survey-request.html"
+                        title="next chapter">SurveyRequest</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/turkgate-manager.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="survey-request.html" title="SurveyRequest"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Turk Gate Manager Documentation"
+             >previous</a> |</li>
+        <li><a href="index.html">Turk Gate Manager 1.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Pierce Edmiston.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

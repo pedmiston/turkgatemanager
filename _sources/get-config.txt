@@ -1,0 +1,6 @@
+Configuration
+=============
+
+.. currentmodule:: turkgatemanager
+
+.. autofunction:: get_configuration
