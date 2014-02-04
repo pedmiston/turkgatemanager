@@ -1,0 +1,161 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TurkGateManager &mdash; Turk Gate Manager 1.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Turk Gate Manager 1.0.1 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to Turk Gate Manager’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Turk Gate Manager’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Turk Gate Manager 1.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="turkgatemanager">
+<h1>TurkGateManager<a class="headerlink" href="#turkgatemanager" title="Permalink to this headline">¶</a></h1>
+<p>The main function of TurkGateManager is to edit the MySQL database associated with TurkGate to perform the following:</p>
+<ul class="simple">
+<li>add requests (worker ids) to a TurkGate group so those workers cannot accept HITs associated with the group in the future</li>
+</ul>
+<p>By communicating with the MySQL database and Amazon Mechanical Turk, TurkGateManager also provides the ability to:</p>
+<ul class="simple">
+<li>retrieve worker ids from HITs directly via the AWS API</li>
+<li>copy worker ids from an existing group to a new group</li>
+<li>rename groups</li>
+<li>remove worker ids from a group</li>
+</ul>
+<div class="section" id="turkgate-terminology">
+<h2>TurkGate terminology<a class="headerlink" href="#turkgate-terminology" title="Permalink to this headline">¶</a></h2>
+<p>A participant taking a survey is associated with a single row in the MySQL database called a <em>request</em>. Each <em>request</em> has the following attributes:</p>
+<ul class="simple">
+<li><em>workerID</em> : a unique identifier for each worker provided by Amazon</li>
+<li><em>URL</em> : the URL of the survey</li>
+<li><em>groupName</em> : an identifier for a set of surveys / HITs</li>
+<li><em>time</em> : the time survey was taken.</li>
+</ul>
+</div>
+<div class="section" id="amazon-mechanical-turk-terminology">
+<h2>Amazon Mechanical Turk terminology<a class="headerlink" href="#amazon-mechanical-turk-terminology" title="Permalink to this headline">¶</a></h2>
+<p>HITs (Human Intelligence Tasks) are initialized with a certain number of <em>assignments</em> (cf. &#8220;requests&#8221; in TurkGate lingo). A worker who accepts a HIT accepts a single <em>assignment</em> in that HIT. For our purposes, these assignments have the following attributes:</p>
+<ul class="simple">
+<li><em>WorkerId</em> : same as above</li>
+<li><em>SubmitTime</em> : the time the survey was submitted</li>
+</ul>
+</div>
+<div class="section" id="using-turkgatemanager">
+<h2>Using TurkGateManager<a class="headerlink" href="#using-turkgatemanager" title="Permalink to this headline">¶</a></h2>
+<p>Download the turkgatemanager module and use in an interactive python session.</p>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/boto/boto">boto</a></li>
+<li><a class="reference external" href="http://www.sqlalchemy.org/download.html">sqlalchemy</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">TurkGateManager</a><ul>
+<li><a class="reference internal" href="#turkgate-terminology">TurkGate terminology</a></li>
+<li><a class="reference internal" href="#amazon-mechanical-turk-terminology">Amazon Mechanical Turk terminology</a></li>
+<li><a class="reference internal" href="#using-turkgatemanager">Using TurkGateManager</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Turk Gate Manager&#8217;s documentation!</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/intro.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Turk Gate Manager’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Turk Gate Manager 1.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Pierce Edmiston.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

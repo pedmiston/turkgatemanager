@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to Turk Gate Manager’s documentation! &mdash; Turk Gate Manager 1.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Turk Gate Manager 1.0.1 documentation" href="#" />
+    <link rel="next" title="TurkGateManager" href="intro.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="TurkGateManager"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">Turk Gate Manager 1.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-turk-gate-manager-s-documentation">
+<h1>Welcome to Turk Gate Manager&#8217;s documentation!<a class="headerlink" href="#welcome-to-turk-gate-manager-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">TurkGateManager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#turkgate-terminology">TurkGate terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#amazon-mechanical-turk-terminology">Amazon Mechanical Turk terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#using-turkgatemanager">Using TurkGateManager</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<span class="target" id="module-turkgatemanager"></span><p>__author__ = &#8220;Pierce Edmiston&#8221;
+__credits__ = [&#8220;Adam Darlow&#8221;, &#8220;Gideon Goldin&#8221;]
+__license__ = &#8220;GPL&#8221;
+__version__ = &#8220;1.0.1&#8221;
+__maintainer__ = &#8220;Pierce Edmiston&#8221;
+__email__ = &#8220;<a class="reference external" href="mailto:pierce&#46;edmiston&#37;&#52;&#48;gmail&#46;com">pierce<span>&#46;</span>edmiston<span>&#64;</span>gmail<span>&#46;</span>com</a>&#8220;</p>
+<dl class="class">
+<dt id="turkgatemanager.TurkGateManager">
+<em class="property">class </em><tt class="descclassname">turkgatemanager.</tt><tt class="descname">TurkGateManager</tt><big>(</big><em>credentials</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and manage groups for use with TurkGate.</p>
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.add_requests">
+<tt class="descname">add_requests</tt><big>(</big><em>requests</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.add_requests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add requests to SurveyRequest</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.copy_group">
+<tt class="descname">copy_group</tt><big>(</big><em>existing</em>, <em>new_group</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.copy_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy all requests in existing group to a new group name</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_assignments_from_hit_id">
+<tt class="descname">get_assignments_from_hit_id</tt><big>(</big><em>hit_id</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_assignments_from_hit_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve assignments based on a hit id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_groups">
+<tt class="descname">get_groups</tt><big>(</big><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_groups" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="function">
+<dt>
+<tt class="descname">get_groups</tt><big>(</big><em>self</em><big>)</big></dt>
+<dd></dd></dl>
+
+<p>Retrieve unique group names in SurveyRequest.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">unique group names</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_hit_ids_by_title">
+<tt class="descname">get_hit_ids_by_title</tt><big>(</big><em>title</em>, <em>num_recent=10</em>, <em>num_pages=4</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_hit_ids_by_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve HIT ids from HIT title</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_recent_hit_titles">
+<tt class="descname">get_recent_hit_titles</tt><big>(</big><em>num_recent=10</em>, <em>num_pages=1</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_recent_hit_titles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve titles of recent HITs</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_requests_by_group">
+<tt class="descname">get_requests_by_group</tt><big>(</big><em>group</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_requests_by_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve requests by group name in SurveyRequest</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_workers">
+<tt class="descname">get_workers</tt><big>(</big><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_workers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve unique worker IDs in SurveyRequest</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.get_workers_by_group">
+<tt class="descname">get_workers_by_group</tt><big>(</big><em>group</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.get_workers_by_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve worker ids for a given group name</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.make_requests_from_csv">
+<tt class="descname">make_requests_from_csv</tt><big>(</big><em>results_file</em>, <em>id_col='WorkerId'</em>, <em>time_col='SubmitTime'</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.make_requests_from_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve requests from HIT results file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.remove_requests_by_group">
+<tt class="descname">remove_requests_by_group</tt><big>(</big><em>group</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.remove_requests_by_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a group from the database</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="turkgatemanager.TurkGateManager.rename_group">
+<tt class="descname">rename_group</tt><big>(</big><em>existing</em>, <em>new_group</em><big>)</big><a class="headerlink" href="#turkgatemanager.TurkGateManager.rename_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renames a group in the databse</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="turkgatemanager.SurveyRequest">
+<em class="property">class </em><tt class="descclassname">turkgatemanager.</tt><tt class="descname">SurveyRequest</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#turkgatemanager.SurveyRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement target table in a python class for use with sqlalchemy engine</p>
+<p>Assumes TurkGate defaults:</p>
+<p>&gt; DESCRIBE [db].SurveyRequest;
++&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;+&#8212;&#8211;+&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;-+
+| Field     | Type         | Null | Key | Default | Extra          |
++&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;+&#8212;&#8211;+&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;-+
+| requestID | int(11)      | NO   | PRI | NULL    | auto_increment |
+| workerID  | varchar(256) | YES  |     | NULL    |                |
+| URL       | varchar(256) | YES  |     | NULL    |                |
+| groupName | varchar(256) | YES  |     | NULL    |                |
+| time      | datetime     | YES  |     | NULL    |                |
++&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;+&#8212;&#8211;+&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;-+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to Turk Gate Manager&#8217;s documentation!</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="intro.html"
+                        title="next chapter">TurkGateManager</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="TurkGateManager"
+             >next</a> |</li>
+        <li><a href="#">Turk Gate Manager 1.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Pierce Edmiston.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
