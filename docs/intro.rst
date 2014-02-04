@@ -1,13 +1,9 @@
-.. Turk Gate Manager documentation master file, created by
-   sphinx-quickstart on Mon Feb  3 17:15:02 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to Turk Gate Manager's documentation!
-=============================================
+TurkGateManager
+===============
 
 The main function of TurkGateManager is to edit the MySQL database associated with TurkGate to perform the following:
-- add requests (worker ids) to a TurkGate group so those workers cannot accept HITs associated with the group in the future
+
+* add requests (worker ids) to a TurkGate group so those workers cannot accept HITs associated with the group in the future
 
 By communicating with the MySQL database and Amazon Mechanical Turk, TurkGateManager also provides the ability to:
 
@@ -18,6 +14,7 @@ By communicating with the MySQL database and Amazon Mechanical Turk, TurkGateMan
 
 TurkGate terminology
 --------------------
+
 A participant taking a survey is associated with a single row in the MySQL database called a *request*. Each *request* has the following attributes:
 
 * *workerID* : a unique identifier for each worker provided by Amazon
@@ -27,6 +24,7 @@ A participant taking a survey is associated with a single row in the MySQL datab
 
 Amazon Mechanical Turk terminology
 ----------------------------------
+
 HITs (Human Intelligence Tasks) are initialized with a certain number of *assignments* (cf. "requests" in TurkGate lingo). A worker who accepts a HIT accepts a single *assignment* in that HIT. For our purposes, these assignments have the following attributes:
 
 * *WorkerId* : same as above
@@ -34,31 +32,11 @@ HITs (Human Intelligence Tasks) are initialized with a certain number of *assign
 
 Using TurkGateManager
 ---------------------
+
 Download the turkgatemanager module and use in an interactive python session.
 
 Requirements
 ^^^^^^^^^^^^
+
 - `boto <https://github.com/boto/boto>`_
 - `sqlalchemy <http://www.sqlalchemy.org/download.html>`_
-
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
-.. automodule:: turkgatemanager
-    :members:
-
-.. autoclass:: TurkGateManager
-    :members:
-
-.. autoclass:: SurveyRequest
-    :members:
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
