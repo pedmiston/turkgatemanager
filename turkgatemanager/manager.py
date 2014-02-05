@@ -11,7 +11,10 @@ from sqlalchemy.orm import sessionmaker
 
 from boto.mturk.connection import MTurkConnection
 
-import pandas as pd
+# not implemented yet
+#import pandas as pd
+
+from turkgatedb import SurveyRequest
 
 class TurkGateManager(object):
     """
