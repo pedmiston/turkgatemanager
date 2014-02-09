@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Turk Gate Manager Documentation &mdash; Turk Gate Manager 1.0.1 documentation</title>
+    <title>TurkGate Manager Documentation &mdash; Turk Gate Manager 1.0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -47,34 +47,40 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="turk-gate-manager-documentation">
-<h1>Turk Gate Manager Documentation<a class="headerlink" href="#turk-gate-manager-documentation" title="Permalink to this headline">¶</a></h1>
-<p>The main function of TurkGateManager is to edit the MySQL database associated with TurkGate to perform the following:</p>
+  <div class="section" id="turkgate-manager-documentation">
+<h1>TurkGate Manager Documentation<a class="headerlink" href="#turkgate-manager-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="turkgate">
+<h2>TurkGate<a class="headerlink" href="#turkgate" title="Permalink to this headline">¶</a></h2>
+<p>If you use Amazon Mechanical Turk to recruit participants for various data collection tasks, you might find yourself in a situation where you&#8217;d like to prevent mTurk workers who have already participated in a HIT &#8220;A&#8221; from participating in a new HIT &#8220;B&#8221;. If you have access to a server, TurkGate is a great solution.</p>
+<p>TurkGate (<strong>g**rouping and **a**ccess **t**ools for **e**xternal surveys for use with Amazon Mechanical **Turk</strong>) is a web application developed by Adam Darlow and Gideon Goldin.</p>
 <ul class="simple">
-<li>add requests (worker ids) to a TurkGate group so those workers cannot accept HITs associated with the group in the future</li>
+<li><a class="reference external" href="http://gideongoldin.github.io/TurkGate/">TurkGate main page</a></li>
+<li><a class="reference external" href="https://github.com/gideongoldin/TurkGate/wiki">TurkGate wiki</a></li>
 </ul>
-<p>By communicating with the MySQL database and Amazon Mechanical Turk, TurkGateManager also provides the ability to:</p>
+</div>
+<div class="section" id="turkgatemanager">
+<h2>TurkGateManager<a class="headerlink" href="#turkgatemanager" title="Permalink to this headline">¶</a></h2>
+<p>TurkGate*Manager* is a python class that serves as an addendum to TurkGate. The main function of TurkGateManager is to edit the MySQL database used by the TurkGate web application to accomplish the following:</p>
 <ul class="simple">
-<li>retrieve worker ids from HITs directly via the AWS API</li>
+<li>add requests (worker ids) to a TurkGate group (prevents those workers from accepting a subsequent HIT from the same group)</li>
+<li>retrieve worker ids directly from completed mTurk HITs</li>
 <li>copy worker ids from an existing group to a new group</li>
 <li>rename groups</li>
 <li>remove worker ids from a group</li>
 </ul>
-<div class="section" id="using-turkgatemanager">
-<h2>Using TurkGateManager<a class="headerlink" href="#using-turkgatemanager" title="Permalink to this headline">¶</a></h2>
-<p>Download the turkgatemanager package and use in an interactive python session.</p>
 </div>
-<div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
-<p>TurkGateManager requires the following packages:</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>To &#8220;install&#8221;, download the repository and edit <tt class="docutils literal"><span class="pre">credentials.yaml</span></tt> with your own credentials (and remove the <tt class="docutils literal"><span class="pre">.default</span></tt> suffix from the file name). See the <a class="reference external" href="http://pedmiston.github.io/turkgatemanager/#documentation">Documentation</a> for more.</p>
+<p>TurkGateManager requires the following python packages:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/boto/boto">boto</a></li>
 <li><a class="reference external" href="http://www.sqlalchemy.org/download.html">sqlalchemy</a></li>
 </ul>
 </div>
 </div>
-<div class="section" id="documentation">
-<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h1>Documentation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="turkgate-manager.html">TurkGateManager</a></li>
@@ -100,12 +106,13 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Turk Gate Manager Documentation</a><ul>
-<li><a class="reference internal" href="#using-turkgatemanager">Using TurkGateManager</a></li>
-<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#">TurkGate Manager Documentation</a><ul>
+<li><a class="reference internal" href="#turkgate">TurkGate</a></li>
+<li><a class="reference internal" href="#turkgatemanager">TurkGateManager</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li><a class="reference internal" href="#id1">Documentation</a><ul>
 </ul>
 </li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
