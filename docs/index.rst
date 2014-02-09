@@ -23,7 +23,7 @@ TurkGate*Manager* is a python class that serves as an addendum to TurkGate. The 
 * remove worker ids from a group
 
 Installation
----------------------
+------------
 
 To "install", download the repository and edit ``credentials.yaml`` with your own credentials (and remove the ``.default`` suffix from the file name). See the `Documentation <http://pedmiston.github.io/turkgatemanager/#documentation>`_ for more.
 
