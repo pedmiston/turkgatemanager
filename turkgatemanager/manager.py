@@ -98,6 +98,7 @@ class TurkGateManager(object):
         :param new_group: new group name to add to database
         """
         # TODO: Should be possible to just change the group name
+        new_requests = []
         for request in self.get_requests_by_group(existing):
             new_requests.append(SurveyRequest(workerID=request.workerID,
                                               URL=request.URL,
